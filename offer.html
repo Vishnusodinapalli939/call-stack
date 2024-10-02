@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #btn {
+        position: relative;
+        top: -100px;
+        left: -100px;
+      }
+      #p1{
+        height:20px;
+        width:40px;
+        border:1px solid red;
+        position: relative;
+        top:-95px;
+        left:550px;
+        color:white;
+        background-color: black;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <video id="video" controls muted autoplay loop>
+        <source
+          src="./position/video.mp4"
+          type="video/mp4"
+          style="z-index: 1"
+        />
+      </video>
+      <button id="btn" style="z-index: 3; color: red">Skip add</button>
+      <div id="p1" style="z-index:3"></div>
+      <iframe id="p" style="display:none" 
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/ZNRSHr3b4uA?si=mzMawluilkrpnvQN"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <!-- <p id="p" style="display: none">This video is skipped</p> -->
+    <script>
+      let video = document.getElementById("video");
+      let p = document.getElementById("p");
+      let btn = document.getElementById("btn");
+      let p1=document.getElementById("p1");
+      setTimeout(() => {
+        video.style.display = "none";
+        p.style.display = "block";
+      }, 60000);
+      btn.addEventListener("click", () => {
+        video.style.display = "none";
+        p.style.display = "block";
+      });
+      setTimeout(()=>{
+     let z= setInterval(() => {
+        p1.innerHTML=x;
+        x--;
+        if(x==-1)
+        clearInterval(z)
+      },1000,x=10);
+    },5000)
+      
+    </script>
+  </body>
+</html>
